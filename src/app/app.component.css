@@ -1,0 +1,22 @@
+.header{
+    background-color: #1b95e0;
+    height: 80px;
+    display: flex;
+    color: #fff;
+}
+.header h1 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.content {
+    display: flex;
+    min-height: 90vh;
+}
+
+.side-nav{
+    width: 20%;
+    padding-top: 2em;
+    border-right: solid 1px #eee;
+
+}

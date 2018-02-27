@@ -1,0 +1,20 @@
+<h3> Nested Routes </h3>
+<p> Each view under the tab is a nested child view of the current</p>
+<p> Tabbed view is developed using ng-bootstrap ngb-tabset</p>
+<p> Also Each Child route is protected by CanActivateChild route gaurd See console log  for details</p>
+<!--<button (click)="navigate1()"> asda</button>
+<button [routerLink]="['./nestedChild2']">asqw </button>-->
+<ngb-tabset (tabChange)="navigateToChildren($event)" activeId="activeId">
+  <ngb-tab id="1" title="Simple">
+    <ng-template ngbTabContent>
+<router-outlet></router-outlet>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab id="2" title="Second Tab">
+    <ng-template ngbTabContent>
+<router-outlet></router-outlet>
+      
+    </ng-template>
+  </ngb-tab>
+</ngb-tabset>
+      

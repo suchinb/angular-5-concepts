@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+.error{
+    color: red;
+}
+p{
+    line-height: 1.5em;
+    font-size: 1.2em;
+}

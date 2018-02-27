@@ -1,0 +1,19 @@
+<h3> Dependency Injection-- Detailed Implementation</h3>
+
+<p>We use the @Inject parameter decorator to instruct Angular 
+  we want to resolve a token and inject a dependency into a constructor.</p>
+<p> @injectable is not needed if all dependent has any decorators like @component or @decorators, 
+  otherwise need to explicitly tell angular to inject this service in dependent constructor. </p>
+  <pre> <code> constructor(@Inject(OtherService) otherSerivce:OtherService)</code></pre>
+  <h3> Declaring providers in ngModule and in component as provider and viewprovider</h3>
+  <p> ngModule.providers:All components share same instance </p><p>vs</p>
+  <p> component.providers:Component and its children share same instance </p> <p>vs</p>
+  <p> component.viewProviders: When ng-content tags used for child component, Only component have the instance </p>
+  <div style="display:flex;justify-content:space-between">
+    <div style="margin-right:1em;width:45%"><app-parent ></app-parent></div>
+    <div style="width:45%"><app-parent ></app-parent></div>
+  </div>
+
+  
+
+
