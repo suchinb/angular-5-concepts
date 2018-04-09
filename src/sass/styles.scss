@@ -1,0 +1,25 @@
+@import '_variables';
+// @import 'public-api';
+ 
+  @import '~/../node_modules/lato-font/scss/public-api';
+ $lato-font-path: '~/../node_modules/lato-font/fonts';
+
+
+ 
+  @include lato-include-font('medium');
+  @include lato-include-font('light');
+  h1 , .h1{
+    @include lato-font('light');
+}
+body{
+    @include lato-font('medium')
+}
+
+ 
+// p.quote {
+//     @include lato-font('medium', italic);
+// }
+
+.error{
+    color:$error-font-color;
+}

@@ -1,12 +1,15 @@
+@import '~sass/_variables';
+
 .header{
     background-color: #1b95e0;
     height: 80px;
     display: flex;
-    color: #fff;
-}
-.header h1 {
-    padding-left: 15px;
-    padding-right: 15px;
+    color: $white;
+    padding: 1em 0;
+    h1 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
 
 .content {
