@@ -1,35 +1,35 @@
-import { Directive } from '@angular/core';
-import { NG_VALIDATORS,FormControl } from '@angular/forms';
-
-function emailDomainValidator( control: FormControl ) {
-  let email= control.value;
-  if (email && email.indexOf('@') != -1) {
-    let [_,domain] = email.split("@")
-    if (domain.toLowerCase()!=="gmail.com") {
-      return {
-        emailDomain:{
-          parsedDomain:domain
-        }
-      }
-    }
-  }
-  else{
-    return null
-  }
-}
+import { Directive, Input } from '@angular/core';
+import { NG_VALIDATORS,FormControl,Validator } from '@angular/forms';
 
 @Directive({
-  selector: '[emailDomain][ngModel]',
+  selector: '[emailDomain]',
   providers:[
     {
       provide:NG_VALIDATORS,
-      useValue:emailDomainValidator,
+      useExisting:EmailDomainValidatorDirective,
       multi:true
     }
   ]
 })
-export class EmailDomainValidatorDirective {
+export class EmailDomainValidatorDirective implements Validator{
 
-  constructor() { }
+   @Input() emailDomain:string;
+
+  validate(control:FormControl){
+    let email= control.value;
+    if (email && email.indexOf('@') != -1) {
+      let [_,domain] = email.split("@")
+      if (domain.toLowerCase()!==this.emailDomain) {
+        return {
+          emailDomain:{
+            parsedDomain:domain
+          }
+        }
+      }
+    }
+    else{
+      return null
+    }
+  }
 
 }
