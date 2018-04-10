@@ -8,12 +8,11 @@ import { SimpleService } from '../simple.service';
     <p>
       Child: {{simpleService.value}}
     </p>
-  `,
-  styles: []
+  `
 })
 export class ChildComponent implements OnInit {
 
-  constructor(private simpleService:SimpleService) { }
+  constructor(public simpleService:SimpleService) { }
 
   ngOnInit() {
   }
