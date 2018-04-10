@@ -25,7 +25,6 @@ import { AlwaysAuthGaurdService } from './gaurds/always-auth-gaurd.service';
 import { OnlyLoggedInGaurdService } from './gaurds/only-logged-in-gaurd.service';
 import { UserServiceService } from './gaurds/user-service.service';
 import { UnSavedService } from './gaurds/un-saved.service';
-import { TestComponent } from './test/test.component';
 import { TemplateformComponent } from './templateform/templateform.component';
 import { EmailDomainValidatorDirective } from './templateform/email-domain-validator.directive';
 
@@ -45,7 +44,6 @@ import { EmailDomainValidatorDirective } from './templateform/email-domain-valid
     NestedRoutesComponent,
     Child1Component,
     Child2Component,
-    TestComponent,
     TemplateformComponent,
     EmailDomainValidatorDirective
   ],
