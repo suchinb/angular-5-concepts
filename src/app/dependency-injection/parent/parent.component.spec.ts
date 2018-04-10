@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 
 import { ParentComponent } from './parent.component';
+import { ChildComponent } from '../child/child.component';
+import { OtherService } from '../other.service';
 
 describe('ParentComponent', () => {
   let component: ParentComponent;
@@ -8,7 +11,9 @@ describe('ParentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ParentComponent ]
+      declarations: [ ParentComponent,ChildComponent ],
+      imports:[FormsModule],
+      providers:[OtherService]
     })
     .compileComponents();
   }));
