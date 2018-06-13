@@ -1,4 +1,5 @@
-import { Component} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { Router, NavigationStart,ActivatedRoute } from '@angular/router';
 
 import { SideNavigationComponent } from './side-navigation/side-navigation.component';
 
@@ -8,5 +9,18 @@ import { SideNavigationComponent } from './side-navigation/side-navigation.compo
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit{
+
+  constructor( private router:Router, private route:ActivatedRoute){}
+
+  ngOnInit() {
+    this.router.events.subscribe(event => {
+      // console.log(event)
+      if (event instanceof NavigationStart) {
+        // console.log(event)
+        if(event.url.indexOf('/auth')===-1)
+        localStorage.setItem('appRedirect',event.url)
+      }
+    }) 
+  }
 }

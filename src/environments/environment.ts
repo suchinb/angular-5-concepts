@@ -4,5 +4,8 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiBase:"https://source-qa01.idm.covapp.io/p/apiProxy",
+  originUri:"source-qa01.idm.covapp.io",
+  siUrl:"https://source-qa01.idm.covapp.io"
 };

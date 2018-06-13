@@ -1,24 +1,26 @@
 import { Injectable, } from '@angular/core';
+import { Observable } from "rxjs/observable";
 
 import { CanActivate,Router } from '@angular/router';
 
-import { UserServiceService } from './user-service.service';
+import { UserServiceService } from "../gaurds/user-service.service";
 
 @Injectable()
 export class OnlyLoggedInGaurdService implements CanActivate{
 
   constructor(private userService:UserServiceService, private router:Router) { }
 
-  canActivate(){
+  canActivate():Observable<boolean>{
     console.log("Authenticating Via OnlyLoggedInGaurdService")
-    if (this.userService.isLoggedIn()) {
-      return true
-    }
-    else{
-      window.alert("Only Logged in users can access")
-      this.router.navigate(['overview'])
-      return false
-    }
+    return this.userService.isLoggedIn()
+    // if (this.loginSErvice.isLoggedIn()) {
+    //   return true
+    // }
+    // else{
+    //   window.alert("Only Logged in users can access")
+    //   this.router.navigate(['overview'])
+    //   return false
+    // }
   }
 
 }

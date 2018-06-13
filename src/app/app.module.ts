@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -27,6 +29,12 @@ import { UserServiceService } from './gaurds/user-service.service';
 import { UnSavedService } from './gaurds/un-saved.service';
 import { TemplateformComponent } from './templateform/templateform.component';
 import { EmailDomainValidatorDirective } from './templateform/email-domain-validator.directive';
+import { LoginService } from './login/login.service';
+import { HttpHandlerService } from './API/http-handler.service';
+import { SolutionResolveService } from './login/solution-resolve.service';
+import { InterceptUnauthorizedService } from './API/intercept-unauthorized.service';
+import { AuthComponent } from './login/auth.component';
+import { AuthResolveService } from './login/auth-resolve.service';
 
 
 @NgModule({
@@ -45,16 +53,18 @@ import { EmailDomainValidatorDirective } from './templateform/email-domain-valid
     Child1Component,
     Child2Component,
     TemplateformComponent,
-    EmailDomainValidatorDirective
+    EmailDomainValidatorDirective,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     NgbModule.forRoot(),
+    HttpClientModule,
     AppRoutingModule
   ],
-  providers: [Validators, OtherService, SimpleService, AlwaysAuthGaurdService, OnlyLoggedInGaurdService, UserServiceService, UnSavedService],
+  providers: [Validators, OtherService, SimpleService, AlwaysAuthGaurdService, OnlyLoggedInGaurdService, UserServiceService, UnSavedService, LoginService, HttpHandlerService, SolutionResolveService, {provide:HTTP_INTERCEPTORS,useClass:InterceptUnauthorizedService,multi:true}, AuthResolveService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
