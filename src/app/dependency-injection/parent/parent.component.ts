@@ -8,11 +8,11 @@ import { SimpleService } from '../simple.service';
     <input class="form-control" [(ngModel)]="simpleService.value">
     <app-child></app-child>
   `,
-  providers:[SimpleService]
+  providers: [SimpleService]
 })
 export class ParentComponent implements OnInit {
-  constructor(public simpleService:SimpleService) { }
-  
+  constructor(public simpleService: SimpleService) { }
+
   ngOnInit() {
   }
 

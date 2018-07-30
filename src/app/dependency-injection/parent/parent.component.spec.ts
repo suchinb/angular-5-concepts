@@ -11,9 +11,9 @@ describe('ParentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ParentComponent,ChildComponent ],
-      imports:[FormsModule],
-      providers:[OtherService]
+      declarations: [ ParentComponent, ChildComponent ],
+      imports: [FormsModule],
+      providers: [OtherService]
     })
     .compileComponents();
   }));

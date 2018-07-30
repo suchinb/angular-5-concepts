@@ -10,17 +10,16 @@ import { Signup } from './../domain-models/signup';
 export class TemplateformComponent implements OnInit {
 
   constructor() { }
-
+  form: Signup;
   ngOnInit() {
-    this.form= new Signup()
+    this.form = new Signup();
   }
-  form:Signup;
 
   submit() {
-    console.log(this.form)
+    console.log(this.form);
   }
 }
 
 // Testing Commit
-//test
-//Test SSH
+// test
+// Test SSH

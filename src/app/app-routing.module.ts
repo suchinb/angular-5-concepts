@@ -19,32 +19,32 @@ import { UnSavedService } from './gaurds/un-saved.service';
 import { SolutionResolveService } from './login/solution-resolve.service';
 import { AuthResolveService } from './login/auth-resolve.service';
 
-const routes=[
+const routes = [
   { path: '', redirectTo: '/overview', pathMatch: 'full' },
-  { path:'auth', component:AuthComponent,resolve:{user:AuthResolveService}},
-  { path: 'overview', component: DashboardComponent,canActivate:[AlwaysAuthGaurdService],resolve:{si:SolutionResolveService}},
+  { path: 'auth', component: AuthComponent, resolve: {user: AuthResolveService}},
+  { path: 'overview', component: DashboardComponent, canActivate: [AlwaysAuthGaurdService], resolve: {si: SolutionResolveService}},
   { path: 'reactiveform', component: ReactiveformComponent},
-  { path:'templateform', component:TemplateformComponent},
-  { path: 'rxjsSearch', component: RxjsSearchComponent,canActivate:[OnlyLoggedInGaurdService],canDeactivate:[UnSavedService]},
+  { path: 'templateform', component: TemplateformComponent},
+  { path: 'rxjsSearch', component: RxjsSearchComponent, canActivate: [OnlyLoggedInGaurdService], canDeactivate: [UnSavedService]},
   { path: 'customTwoWayBinding', component: CustomTwoWayBindingComponent},
-  { path:'dependencyInjection', component: DependencyInjectionComponent},
-  { path: 'nestedRoutes', 
+  { path: 'dependencyInjection', component: DependencyInjectionComponent},
+  { path: 'nestedRoutes',
     component: NestedRoutesComponent,
-    canActivateChild:[AlwaysAuthGaurdService],
+    canActivateChild: [AlwaysAuthGaurdService],
     children: [
-      {path:'', redirectTo:'nestedChild1', pathMatch:'full'},
-      {path:'nestedChild1',component:Child1Component},
-      {path:'nestedChild2', component:Child2Component}
+      {path: '', redirectTo: 'nestedChild1', pathMatch: 'full'},
+      {path: 'nestedChild1', component: Child1Component},
+      {path: 'nestedChild2', component: Child2Component}
     ]
   },
-  {path:'**', redirectTo:'/overview'}
-]
+  {path: '**', redirectTo: '/overview'}
+];
 
 @NgModule({
   imports: [
     RouterModule.forRoot(routes)
   ],
-  exports:[RouterModule]
+  exports: [RouterModule]
 })
 
 export class AppRoutingModule { }

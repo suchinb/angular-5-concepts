@@ -30,7 +30,7 @@
       'has-success':email.valid && email.touched
       }">
       <label>Email</label>
-      <input class="form-control" name="email" [(ngModel)]="form.email" required #email="ngModel" pattern="[^ @]*@[^ @]*" emailDomain="gmail.com">
+      <input class="form-control" name="email" [(ngModel)]="form.email" required #email="ngModel" pattern="[^ @]*@[^ @]*" appEmailDomain="gmail.com">
       <div  *ngIf="email.errors && email.touched">
         <p class="invalid-feedback error" *ngIf="email.errors.required">This Field is required</p>
         <p class="invalid-feedback error" *ngIf="email.errors.pattern">This is not a valid email</p>

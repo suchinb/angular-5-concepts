@@ -9,10 +9,10 @@ import { Router } from '@angular/router';
 })
 export class AuthComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
-    this.router.navigateByUrl(localStorage.getItem('appRedirect'))
+    this.router.navigateByUrl(localStorage.getItem('appRedirect'));
   }
 
 }

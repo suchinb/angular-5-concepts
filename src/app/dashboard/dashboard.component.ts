@@ -8,10 +8,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private route:ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    console.log(this.route.snapshot.data.si)
+    console.log(this.route.snapshot.data.si);
   }
 
 }

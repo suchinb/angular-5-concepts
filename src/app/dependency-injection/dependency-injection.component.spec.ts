@@ -14,9 +14,9 @@ describe('DependencyInjectionComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DependencyInjectionComponent,ParentComponent,ChildComponent ],
-      imports:[FormsModule],
-      providers:[{provide:SimpleService,useValue:{value:'test'}},OtherService]
+      declarations: [ DependencyInjectionComponent, ParentComponent, ChildComponent ],
+      imports: [FormsModule],
+      providers: [{provide: SimpleService, useValue: {value: 'test'}}, OtherService]
     })
     .compileComponents();
   }));

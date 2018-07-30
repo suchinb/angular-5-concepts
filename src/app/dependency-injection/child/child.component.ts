@@ -6,13 +6,13 @@ import { SimpleService } from '../simple.service';
   selector: 'app-child',
   template: `
     <p>
-      Child: {{simpleService.value}}
+      Child: {{ simpleService.value }}
     </p>
   `
 })
 export class ChildComponent implements OnInit {
 
-  constructor(public simpleService:SimpleService) { }
+  constructor(public simpleService: SimpleService) { }
 
   ngOnInit() {
   }

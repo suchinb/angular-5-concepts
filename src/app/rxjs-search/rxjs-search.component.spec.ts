@@ -10,7 +10,7 @@ describe('RxjsSearchComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ RxjsSearchComponent ],
-      imports:[ReactiveFormsModule]
+      imports: [ReactiveFormsModule]
     })
     .compileComponents();
   }));

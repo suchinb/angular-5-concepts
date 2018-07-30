@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
-import { HTTP_INTERCEPTORS } from "@angular/common/http";
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -64,7 +64,19 @@ import { AuthResolveService } from './login/auth-resolve.service';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [Validators, OtherService, SimpleService, AlwaysAuthGaurdService, OnlyLoggedInGaurdService, UserServiceService, UnSavedService, LoginService, HttpHandlerService, SolutionResolveService, {provide:HTTP_INTERCEPTORS,useClass:InterceptUnauthorizedService,multi:true}, AuthResolveService],
+  providers: [
+    Validators,
+    OtherService,
+    SimpleService,
+    AlwaysAuthGaurdService,
+    OnlyLoggedInGaurdService,
+    UserServiceService,
+    UnSavedService,
+    LoginService,
+    HttpHandlerService,
+    SolutionResolveService,
+    {provide: HTTP_INTERCEPTORS, useClass: InterceptUnauthorizedService, multi: true},
+    AuthResolveService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,7 +5,7 @@ import { OtherService } from './other.service';
 // @Injectable()
 export class SimpleService {
 
-  constructor(@Inject(OtherService) otherSerivce:OtherService) { }
-  value:string
+  constructor(@Inject(OtherService) otherSerivce: OtherService) { }
+  value: string;
 
 }

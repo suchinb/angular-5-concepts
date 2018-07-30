@@ -10,7 +10,7 @@ import { SizerComponent } from './sizer.component';
 export class CustomTwoWayBindingComponent implements OnInit {
 
   constructor() { }
-   fontSizePx:number=20;
+   fontSizePx= 20;
   ngOnInit() {
   }
 

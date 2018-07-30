@@ -6,7 +6,7 @@
       <input class="form-control" placeholder="Search Organizations" [formControl]="searchOrg" >
       <div class="results" *ngIf="showresults && searchOrg.dirty"> 
         <ul *ngIf="loading==false&&searchResults.length!==0">
-          <li *ngFor="let search of searchResults" class="list-item" (click)="selectOrg(search)"> {{search}}</li>
+          <li *ngFor="let search of searchResults" class="list-item" (click)="selectOrg(search)"> {{ search }}</li>
         </ul>
         <span *ngIf="loading" >Loading...</span>
         <span *ngIf="!loading&&searchResults.length==0" >No Details Found!!</span>
@@ -14,7 +14,7 @@
   </div>
   <pre>
     <code>
-    {{forDisplay}}
+    {{ forDisplay }}
     </code>
   </pre>
 </section>

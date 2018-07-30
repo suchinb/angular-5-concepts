@@ -50,7 +50,7 @@
       <label> Language </label>
       <select class="form-control" formControlName="language">
         <option value=""> Please select a language </option>
-        <option *ngFor="let lang of langs" [value]="lang"> {{lang}} </option>
+        <option *ngFor="let lang of langs" [value]="lang"> {{ lang }} </option>
       </select>
     </div>
     <button class="btn btn-primary" type="submit" [disabled]="myForm.invalid" title="submit">Submit</button>

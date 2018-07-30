@@ -1,5 +1,6 @@
-import { Directive,Input } from '@angular/core';
+import { Directive, Input } from '@angular/core';
 @Directive({
+  // tslint:disable
   selector: '[routerLink]',
   host: { '(click)': 'onClick()' }
 })

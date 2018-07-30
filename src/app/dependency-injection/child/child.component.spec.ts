@@ -10,7 +10,7 @@ describe('ChildComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ChildComponent ],
-      providers:[{provide:SimpleService,useValue:{value:'test'}}]
+      providers: [{provide: SimpleService, useValue: {value: 'test'}}]
     })
     .compileComponents();
   }));

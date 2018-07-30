@@ -1,5 +1,5 @@
 import { TestBed, async } from '@angular/core/testing';
- import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 // import { RouterTestingModule } from '@angular/router/testing';
 
 import { AppComponent } from './app.component';
@@ -12,7 +12,7 @@ describe('AppComponent', () => {
         // SideNavigationComponent
       ],
       // imports:[ RouterTestingModule]
-       schemas:[CUSTOM_ELEMENTS_SCHEMA]
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
   }));
   it('should create the app', async(() => {

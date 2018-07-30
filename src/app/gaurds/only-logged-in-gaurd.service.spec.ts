@@ -6,12 +6,12 @@ import { OnlyLoggedInGaurdService } from './only-logged-in-gaurd.service';
 import { UserServiceService } from './user-service.service';
 
 describe('OnlyLoggedInGaurdService', () => {
-  let router = {
+  const router = {
         navigate: jasmine.createSpy('navigate')
     };
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [OnlyLoggedInGaurdService,UserServiceService, {provide:Router,useValue:router}]
+      providers: [OnlyLoggedInGaurdService, UserServiceService, {provide: Router, useValue: router}]
     });
   });
 
